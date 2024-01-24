@@ -1,9 +1,7 @@
-import 'package:belajar/column_widget.dart';
 import 'package:belajar/container_widget.dart';
-import 'package:belajar/latihan1.dart';
-import 'package:belajar/latihan2.dart';
-import 'package:belajar/latihan3.dart';
-import 'package:belajar/row_column.dart';
+import 'package:belajar/lisview/list_basic.dart';
+import 'package:belajar/lisview/list_builder.dart';
+import 'package:belajar/lisview/tugas1.dart';
 import 'package:flutter/material.dart';
 
 void main () {
@@ -24,7 +22,7 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.black,
           title: Text("Muhamaddika"),
         ),
-        body: latihan3(),
+        body: tugas1(),
       ),
     );
   }
