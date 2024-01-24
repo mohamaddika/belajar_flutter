@@ -21,7 +21,7 @@ class tugas1 extends StatelessWidget {
         "https://akcdn.detik.net.id/visual/2023/08/11/jisoo-blackpink-3_43.jpeg?w=650&q=90",
         "Kim Ji-soo"),
     ListItem(
-        "https://pm1.aminoapps.com/7099/344051f6cf2e8f302b8fb492bddfcca607914089r1-1080-1349v2_uhq.jpg",
+        "https://asset-2.tstatic.net/bangka/foto/bank/images/20220329-Potret-Rose-Blackpink.jpg",
         " Rosé"),
     ListItem(
         "https://awsimages.detik.net.id/community/media/visual/2018/05/26/3f004af3-863c-4440-b076-fcf33c7cddba_43.png?w=300&q=90",
@@ -40,7 +40,7 @@ class tugas1 extends StatelessWidget {
               children: [
                 Container(
                   width: double.infinity,
-                  height: 140,
+                  height: 120,
                   margin: EdgeInsets.all(8),
                   padding: EdgeInsets.all(10),
                   decoration: BoxDecoration(
@@ -54,18 +54,17 @@ class tugas1 extends StatelessWidget {
                   children: [
                     Container(
                       width: 500,
-                      height: 300,
+                      height: 200,
                       margin: EdgeInsets.all(10),
                       padding: EdgeInsets.all(8),
                       decoration: BoxDecoration(
-                        color: Colors.blueAccent,
                       ),
                       child: ListView.separated(
                           scrollDirection: Axis.vertical,
                           itemCount: itemList.length,
                           separatorBuilder: (context, index) {
                             return Divider(
-                              color: Colors.yellow,
+                              color: Colors.pink,
                             );
                           },
                           itemBuilder: (context, index) {
