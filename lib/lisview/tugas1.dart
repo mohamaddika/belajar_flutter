@@ -1,27 +1,37 @@
+
 import 'package:flutter/material.dart';
 
 class tugas1 extends StatelessWidget {
   tugas1({super.key});
   final List<String> entries = <String>['A', 'B', 'C', 'D'];
   final List<String> image = <String>[
+    
     "https://i.redd.it/j2955rqs5xe91.jpg",
+    "https://peristiwa.info/wp-content/uploads/2022/08/Screenshot_20220810-162626_Instagram.jpg",
+    "https://cdnwpseller.gramedia.net/wp-content/uploads/2022/07/18103925/bp-2.jpg",
+    "https://akcdn.detik.net.id/visual/2023/03/14/blackpink-3_43.jpeg?w=360&q=90",
   ];
   final List<String> image2 = <String>[
-    "https://static.promediateknologi.id/crop/0x0:0x0/0x0/webp/photo/p2/13/2023/12/22/20231222_104153-2070990109.jpg",
     "https://awsimages.detik.net.id/community/media/visual/2022/08/09/lisa-blackpink-diduga-pakai-wig-1_43.jpeg?w=1200",
-    "https://o-cdn-cas.sirclocdn.com/parenting/images/Jiso_4.width-800.format-webp.webp",
-    "https://akcdn.detik.net.id/visual/2021/02/11/rose-blackpink-5_43.jpeg?w=650&q=90"
+    "https://asset.kompas.com/crops/IqvxMA6wuduz6i0-hs4ziNUqE80=/0x170:1080x890/750x500/data/photo/2022/03/08/62277f10ce7f7.jpg",
+    "https://akcdn.detik.net.id/visual/2023/08/11/jisoo-blackpink-3_43.jpeg?w=650&q=90",
+    "https://pm1.aminoapps.com/7099/344051f6cf2e8f302b8fb492bddfcca607914089r1-1080-1349v2_uhq.jpg",
+    "https://awsimages.detik.net.id/community/media/visual/2018/05/26/3f004af3-863c-4440-b076-fcf33c7cddba_43.png?w=300&q=90"
   ];
 
   final List<String> nama = <String>[
+    "Lisa ",
     "Jennie Kim",
-    "Lisa",
-    "Kim Ji-Soo",
-    "Rose"
+    "Kim Ji-soo",
+    "Rosé",
+    "Agus Kecut"
   ];
 
   final List<String> nama1 = <String>[
-    "Banner Black Pink"
+    "Logo Black Pink",
+    "Jadwal Konser BlackPink",
+    "Member Member BlackPink",
+    "BlackPink Konser"
   ];
 
   @override
@@ -73,8 +83,8 @@ class tugas1 extends StatelessWidget {
                 return Padding(
                   padding: const EdgeInsets.all(3.0),
                   child: Container(
-                    height: 150,
-                    width: 150,
+                    height: 100,
+                    width: 120,
                     child: Column(
                       children: [
                         Padding(

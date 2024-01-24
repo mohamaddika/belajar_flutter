@@ -1,4 +1,6 @@
 import 'package:belajar/container_widget.dart';
+import 'package:belajar/latihan1.dart';
+import 'package:belajar/latihan3.dart';
 import 'package:belajar/lisview/list_basic.dart';
 import 'package:belajar/lisview/list_builder.dart';
 import 'package:belajar/lisview/tugas1.dart';
