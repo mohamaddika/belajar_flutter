@@ -1,4 +1,9 @@
+import 'package:belajar/column_widget.dart';
 import 'package:belajar/container_widget.dart';
+import 'package:belajar/latihan1.dart';
+import 'package:belajar/latihan2.dart';
+import 'package:belajar/latihan3.dart';
+import 'package:belajar/row_column.dart';
 import 'package:flutter/material.dart';
 
 void main () {
@@ -16,12 +21,23 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          backgroundColor: Colors.blue,
-          title: Text("Belajar Flutter"),
+          backgroundColor: Colors.black,
+          title: Text("Muhamaddika"),
         ),
-        body: BelajarContainer(),
+        body: latihan3(),
       ),
     );
+  }
+}
+
+class NewRow extends StatelessWidget {
+  const NewRow({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return BelajarContainer();
   }
 }
 
