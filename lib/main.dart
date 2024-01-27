@@ -1,4 +1,8 @@
 import 'package:belajar/container_widget.dart';
+import 'package:belajar/gridview/grid_basic.dart';
+import 'package:belajar/gridview/grid_builder.dart';
+import 'package:belajar/gridview/grid_count.dart';
+import 'package:belajar/gridview/tugas_grid1.dart';
 import 'package:belajar/latihan1.dart';
 import 'package:belajar/latihan3.dart';
 import 'package:belajar/lisview/list_basic.dart';
@@ -6,7 +10,7 @@ import 'package:belajar/lisview/list_builder.dart';
 import 'package:belajar/lisview/tugas1.dart';
 import 'package:flutter/material.dart';
 
-void main () {
+void main() {
   runApp(MyApp());
 }
 
@@ -14,7 +18,7 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Ini Project Flutter Pertamaku",
@@ -24,7 +28,7 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.black,
           title: Text("Muhamaddika"),
         ),
-        body: tugas1(),
+        body: Lat1(),
       ),
     );
   }
@@ -52,8 +56,8 @@ class TextWidget extends StatelessWidget {
       child: Text(
         "Hallo Andika Ganteng...\nHallo Juga Mimin...",
         style: TextStyle(
-          color: Colors.black, fontSize: 25, fontWeight: FontWeight.bold),
-          ),
+            color: Colors.black, fontSize: 25, fontWeight: FontWeight.bold),
+      ),
     );
   }
 }

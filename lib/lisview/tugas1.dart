@@ -53,7 +53,7 @@ class tugas1 extends StatelessWidget {
                 Column(
                   children: [
                     Container(
-                      width: 500,
+                      width: 5,
                       height: 200,
                       margin: EdgeInsets.all(10),
                       padding: EdgeInsets.all(8),
