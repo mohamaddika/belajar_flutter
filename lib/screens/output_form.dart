@@ -16,7 +16,7 @@ class OutputFromScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         iconTheme: IconThemeData(color: Colors.black),
-        title: Text(
+        title: Text(  
           "Hasil",
           style: TextStyle(color: Colors.black),
         ),
