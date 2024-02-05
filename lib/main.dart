@@ -8,6 +8,9 @@ import 'package:belajar/latihan3.dart';
 import 'package:belajar/lisview/list_basic.dart';
 import 'package:belajar/lisview/list_builder.dart';
 import 'package:belajar/lisview/tugas1.dart';
+import 'package:belajar/screens/home.dart';
+import 'package:belajar/screens/menu_screen.dart';
+import 'package:belajar/screens/second_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -22,14 +25,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Ini Project Flutter Pertamaku",
-      home: Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          backgroundColor: Colors.black,
-          title: Text("Muhamaddika"),
-        ),
-        body: Lat1(),
-      ),
+
+      initialRoute: '/',
+      routes: {
+        '/': (context) => NavigationMenu(),
+        'second' :(context) => SecondScreen(),
+        'third' :(context) => ThirdScreen()
+      },
     );
   }
 }

@@ -37,7 +37,7 @@ class Lat1 extends StatelessWidget {
               color: Colors.orange,
               child: Center(
                 child: FlutterLogo(
-                  size: 30,
+                  size: 300,
                 )
               ),
             ),
@@ -45,7 +45,7 @@ class Lat1 extends StatelessWidget {
               color: Colors.pink,
               child: Center(
                 child: FlutterLogo(
-                size: 30,
+                size: 300,
               )
               ),
             ),
@@ -53,7 +53,7 @@ class Lat1 extends StatelessWidget {
               color: Colors.purple,
               child: Center(
                child: FlutterLogo(
-                size: 30,
+                size: 300,
               )
               ),
             ),
