@@ -1,12 +1,10 @@
 import 'package:belajar/helper/size_helper.dart';
-import 'package:belajar/helper/size_helper.dart';
+import 'package:belajar/screens/boking_output.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-import 'boking_output.dart';
-
 class NatureBoking extends StatefulWidget {
-  const NatureBoking({Key? key}) : super(key: key);
+  const NatureBoking({super.key});
 
   @override
   State<NatureBoking> createState() => _NatureBokingState();
@@ -16,19 +14,21 @@ class _NatureBokingState extends State<NatureBoking> {
   final _formKey = GlobalKey<FormState>();
   final _scaffoldKey = GlobalKey<ScaffoldState>();
 
+  //mendeskripsikan variabel input
   TextEditingController namaController = TextEditingController();
-  TextEditingController jumlahController = TextEditingController();
-  TextEditingController tglController = TextEditingController();
-  String _pilihTiket = " ";
-  final List<String> nature = [
-    "Nature Diamond Beach - Rp. 25.000",
-    "Nature Montain - Rp. 50.000",
-    "Nature Flower Montain - Rp.37.000",
-    "Nature Kelimutu - Rp.650.000",
-    "Nature Bromo - Rp. 34.000"
+  TextEditingController jmlController = TextEditingController();
+  TextEditingController tglBerangkatController = TextEditingController();
+  String _pilihTujuan = '';
+
+  final List<String> tujuan = [
+    "Nature Diamond Beach",
+    "Nature Montain",
+    "Nature Flower Montain",
+    "Nature Kelimutu",
+    "Nature Bromo"
   ];
 
-  final Map<String, double> hargaNature = {
+  final Map<String, double> tujuanHarga = {
     "Nature Diamond Beach": 25000.0,
     "Nature Montain": 50000.0,
     "Nature Flower Montain": 37000.0,
@@ -36,15 +36,16 @@ class _NatureBokingState extends State<NatureBoking> {
     "Nature Bromo": 34000.0,
   };
 
-  final Map<String, String> natureImages = {
-    "Nature Deamond Beach - Rp. 25.000": "image" "images/montain.jpg",
-    "Nature Montain - Rp. 50.000": "",
-    "Nature Flower Montain - Rp.37.500": "",
-    "Nature Kelimutu - Rp.650.000": "",
-    "Nature Bromo - Rp. 34.000": "",
+  final Map<String, String> tujuanImage = {
+    "Nature Diamond Beach": "images/dm.jpeg",
+    "Nature Montain": "images/montain.jpg",
+    "Nature Flower Montain": "images/bunga.jpg",
+    "Nature Kelimutu": "images/Kelimutu.jpg",
+    "Nature Bromo": "images/11.jpg",
   };
 
-  double pilihTiketNature = 25000.0;
+  double selectedtujuanHarga = 10000.0;
+  String selectedtujuanImage = '';
 
   @override
   Widget build(BuildContext context) {
@@ -61,6 +62,7 @@ class _NatureBokingState extends State<NatureBoking> {
                 margin: EdgeInsets.all(10),
                 shape: RoundedRectangleBorder(
                   side: BorderSide(color: Colors.black),
+                  borderRadius: BorderRadius.circular(8),
                 ),
                 child: Padding(
                   padding: EdgeInsets.all(24),
@@ -69,19 +71,18 @@ class _NatureBokingState extends State<NatureBoking> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text("Pembelian Tiket Masuk"),
+                        Text("Tiket Berangkat"),
                         SizedBox(
-                          height: 10,
+                          height: 18,
                         ),
                         TextFormField(
                           controller: namaController,
                           decoration: InputDecoration(
-                            hintText: "Nama Lengkap",
-                            border: OutlineInputBorder(),
-                          ),
+                              hintText: "Nama lengkap",
+                              border: OutlineInputBorder()),
                           validator: (value) {
                             if (value!.isEmpty) {
-                              return 'Input Data';
+                              return 'input nama';
                             }
                             return null;
                           },
@@ -91,10 +92,11 @@ class _NatureBokingState extends State<NatureBoking> {
                         ),
                         DropdownButtonFormField(
                           decoration: InputDecoration(
-                              hintText: "Tiket",
-                              labelText: "Pilih Tiket",
+                              hintText: "tujuan",
+                              labelText: "pilih tujuan",
                               border: OutlineInputBorder()),
-                          items: nature.map((String items) {
+                          items: tujuan.map((String items) {
+                            int index = 0;
                             return DropdownMenuItem(
                               value: items,
                               child: Text(items),
@@ -102,40 +104,40 @@ class _NatureBokingState extends State<NatureBoking> {
                           }).toList(),
                           onChanged: (String? newValue) {
                             setState(() {
-                              _pilihTiket = newValue!;
-                              pilihTiketNature =
-                                  hargaNature[_pilihTiket] ?? 25000.0;
+                              _pilihTujuan = newValue!;
+                              selectedtujuanHarga =
+                                  tujuanHarga[_pilihTujuan] ?? 10000.0;
+                              selectedtujuanImage =
+                                  tujuanImage[_pilihTujuan] ?? '';
                             });
                           },
                         ),
                         SizedBox(
-                          height: 10,
+                          height: 18,
                         ),
-                        TextFormField(
-                          controller: jumlahController,
+                         TextFormField(
+                          controller: jmlController,
                           decoration: InputDecoration(
-                            hintText: "Jumlah Tiket",
-                            border: OutlineInputBorder(),
-                          ),
+                              hintText: "Jumlah Tiket",
+                              border: OutlineInputBorder()),
                           validator: (value) {
                             if (value!.isEmpty) {
-                              return 'Input Data';
+                              return 'Input Jumlah Tiket ';
                             }
                             return null;
                           },
                         ),
                         SizedBox(
-                          height: 10,
+                          height: 18,
                         ),
-                        TextFormField(
-                          controller: tglController,
+                       TextFormField(
+                          controller: tglBerangkatController,
                           decoration: InputDecoration(
-                            hintText: "Tanggal Pembelian",
-                            border: OutlineInputBorder(),
-                          ),
+                              hintText: "Tanggal Berangkat",
+                              border: OutlineInputBorder()),
                           validator: (value) {
                             if (value!.isEmpty) {
-                              return 'Input Data';
+                              return 'Input tanggal Berangkat ';
                             }
                             return null;
                           },
@@ -147,17 +149,17 @@ class _NatureBokingState extends State<NatureBoking> {
                               lastDate: DateTime(2100),
                             );
                             if (pickedDate != null) {
-                              String tgl =
+                              String tglBerangkat =
                                   DateFormat('yyyy-MM-dd').format(pickedDate);
                               setState(() {
-                                tglController.text = tgl;
+                                tglBerangkatController.text = tglBerangkat;
                               });
                             } else {
-                              print("Tanggal Tidak Dipilih");
+                              print("tanggal tidak dipilih");
                             }
                           },
                         ),
-                        SizedBox(
+                         SizedBox(
                           height: 18,
                         ),
                         SizedBox(
@@ -165,14 +167,21 @@ class _NatureBokingState extends State<NatureBoking> {
                           height: displayHeight(context) * 0.075,
                           child: ElevatedButton(
                             style: ButtonStyle(
+                              backgroundColor:
+                                  MaterialStateProperty.all(Colors.blueAccent),
                               shape: MaterialStateProperty.all<
                                   RoundedRectangleBorder>(
                                 RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10),
-                                    side: BorderSide(color: Colors.white60)),
+                                  borderRadius:
+                                      BorderRadiusDirectional.circular(10),
+                                  side: BorderSide(color: Colors.white60),
+                                ),
                               ),
                             ),
-                            child: Text("Beli Tiket"),
+                            child: Text(
+                              "simpan",
+                              style: TextStyle(color: Colors.white),
+                            ),
                             onPressed: () {
                               _submit();
                             },
@@ -197,22 +206,23 @@ class _NatureBokingState extends State<NatureBoking> {
     } else {
       _formKey.currentState!.save();
       String nama = namaController.text;
-      String jumlah = jumlahController.text;
-      String tgl = tglController.text;
-
-      double totalHarga = double.parse(jumlah) * pilihTiketNature;
-
+      String tujuan = _pilihTujuan;
+      String jumlah = jmlController.text;
+      String tglBerangkat = tglBerangkatController.text;
+      String img = selectedtujuanImage;
+      double totalHarga = double.parse(jumlah) * selectedtujuanHarga;
+      print(img);
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => bokingOutput(
+          builder: (context) => OutputFormScreen(
             nama: nama,
             jumlah: jumlah,
-            tgl: tgl,
-            nature: _pilihTiket,
-            pilihTiketNature: pilihTiketNature,
+            tglBerangkat: tglBerangkat,
+            tujuan: _pilihTujuan,
+            selectedtujuanHarga: selectedtujuanHarga,
             totalHarga: totalHarga,
-            natureImage: natureImages[_pilihTiket] ?? "",
+            tujuanImage: img,
           ),
         ),
       );

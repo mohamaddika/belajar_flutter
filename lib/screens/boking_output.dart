@@ -1,50 +1,64 @@
 import 'package:flutter/material.dart';
 
-class bokingOutput extends StatelessWidget {
-  final String nama, jumlah, tgl, nature, natureImage;
-  final double pilihTiketNature, totalHarga;
-
-  bokingOutput({
+class OutputFormScreen extends StatelessWidget {
+  final String nama, jumlah, tglBerangkat, tujuan, tujuanImage;
+  final double selectedtujuanHarga, totalHarga;
+  OutputFormScreen({
     Key? key,
     required this.nama,
     required this.jumlah,
-    required this.tgl,
-    required this.nature,
-    required this.pilihTiketNature,
+    required this.tglBerangkat,
+    required this.tujuan,
+    required this.selectedtujuanHarga,
     required this.totalHarga,
-    required this.natureImage,
+    required this.tujuanImage,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Tiket Boking Masuk Nature'),
+        title: Text(' Tiket Nature'),
       ),
-      body: Container(
-        padding: EdgeInsets.all(10.0),
-        margin: EdgeInsets.all(10.0),
-        decoration: BoxDecoration(
-          border: Border.all(color: Colors.black),
-          borderRadius: BorderRadius.all(Radius.circular(10.0)),
-        ),
-        child: ListView(
-          children: [
-            ListTile(
-              title: Image.network(natureImage, height: 300, width: 300),
-              subtitle: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('Nama : $nama'),
-                  Text('Jumlah Tiket Di Pesan : $jumlah'),
-                  Text('Tanggal Pembelian : $tgl'),
-                  Text('Taman : $nature'),
-                  Text('Harga per Tiket : $pilihTiketNature'),
-                  Text('Total Harga : $totalHarga'),
-                ],
+      body: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Container(
+          height: 350,
+          width: double.infinity,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: ListView(
+            children: [
+              Container(
+                height: 200,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  image: DecorationImage(
+                    image: AssetImage(tujuanImage),
+                    fit: BoxFit.cover,
+                  ),
+                ),
               ),
-            ),
-          ],
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ListTile(
+                  subtitle: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('Nama: $nama'),
+                      Text('Jumlah Tiket: $jumlah'),
+                      Text('Tanggal Pesan: $tglBerangkat'),
+                      Text('Tujuan: $tujuan'),
+                      Text('Harga per Tiket: $selectedtujuanHarga'),
+                      Text('Total Harga: $totalHarga'),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
