@@ -1,3 +1,4 @@
+import 'package:belajar/screens/boking_input.dart';
 import 'package:belajar/screens/home.dart';
 import 'package:belajar/screens/detail_nature.dart';
 import 'package:belajar/screens/input_form.dart';
@@ -18,7 +19,7 @@ class _NavigationMenuState extends State<NavigationMenu> {
   List _pages = [
     HomeScreen(),
     ListNatureScreen(),
-    BelajarForm(),
+    NatureBoking(),
   ];
 
   _changeTab(int index) {
